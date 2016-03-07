@@ -39,6 +39,7 @@ function Ai() {
             if (grid.cells[row][i%4]) {
                 if (temp && temp === grid.cells[row][i%4].value) {
                     score[row] = grid.cells[row][i%4].value * 2;
+                    console.log(temp + ", " + grid.cells[row][i%4].value);
                 } else if (temp && temp !== grid.cells[row][i%4].value) {
                     score[row] = 0;
                     console.log(temp + ", " + grid.cells[row][i%4].value);
