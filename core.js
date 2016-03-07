@@ -32,6 +32,7 @@ function Ai() {
         for (var i = 0, l = grid.cells.length, row = 0; i < l; i++) {
             if ((row + 1) * 4 < i) {
                 row = row + 1;
+                console.log(row);
                 temp = undefined;
             }
 
@@ -40,6 +41,7 @@ function Ai() {
                     score[row] = grid.cells[row][i%4].value * 2;
                 } else if (temp && temp !== grid.cells[row][i%4].value) {
                     score[row] = 0;
+                    console.log(temp + ", " + grid.cells[row][i%4].value);
                 }
                 temp = grid.cells[row][i%4].value;
             }
