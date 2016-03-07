@@ -29,7 +29,7 @@ function Ai() {
         var temp,
             score = [0,0,0,0,0,0,0,0];
 
-        for (var i = 0, l = grid.cells.length, row = 0; i < l; i++) {
+        for (var i = 0, l = grid.cells.length * 4, row = 0; i < l; i++) {
             if ((row + 1) * 4 < i) {
                 row = row + 1;
                 console.log(row);
