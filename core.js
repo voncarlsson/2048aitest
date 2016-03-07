@@ -26,6 +26,7 @@ function Ai() {
 
         // sample AI:
         if (this.foo == null) this.foo = 0;
+        console.log(grid);
         return this.foo++ % 4;
     }
 }
