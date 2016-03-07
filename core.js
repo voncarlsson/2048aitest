@@ -25,8 +25,29 @@ function Ai() {
         //              Method returns true if you can move to that direction, false otherwise.
 
         // sample AI:
+        
+        var temp,
+            score = [0,0,0,0,0,0,0,0];
+
+        for (var i = 0, l = grid.cells.length, row = 0; i < l; i++) {
+            if ((row + 1) * 4 < i) {
+                row = row + 1;
+                temp = undefined;
+            }
+
+            if (grid.cells[row][i%4]) {
+                if (temp && temp === grid.cells[row][i%4].value) {
+                    score[row] = grid.cells[row][i%4].value * 2;
+                } else if (temp && temp !== grid.cells[row][i%4].value) {
+                    score[row] = 0;
+                }
+                temp = grid.cells[row][i%4].value;
+            }
+        }
+        
+        console.log(score);
+        
         if (this.foo == null) this.foo = 0;
-        console.log(grid);
         return this.foo++ % 4;
     }
 }
